@@ -1,4 +1,4 @@
-angular.module('digApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'SongCtrl', 'SongService'])
+angular.module('proofViewApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'DealCtrl', 'DealService'])
 	.config(function ($sceProvider) {
     $sceProvider.enabled(false);
 });

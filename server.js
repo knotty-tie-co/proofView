@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 
 // configuration ===========================================
 
-mongoose.connect('mongodb://localhost/dig');
+mongoose.connect('mongodb://localhost/proofView');
 	
 // config files
 var db = require('./config/db');
@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 require('./app/routes')(app); // pass our application into our routes
 
 // models
-require('./app/models/Song');
+require('./app/models/Deal');
 
 // start app ===============================================
 app.listen(port);	
