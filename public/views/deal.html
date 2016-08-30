@@ -1,0 +1,65 @@
+<section ng-controller="DealController as deal">
+	<h2 ng-show="!deal.designer">Hello, Mark! Here are your proofs for review.</h2>
+	<div ng-show="!deal.designer" class="ui compact icon message">
+		<i class="talk icon"></i>
+		<div class="content">
+			<div class="header">
+				We're awaiting your feedback on your most recent proof.
+			</div>
+			<p>Let us know what you think! We can make any changes you like, or help you finalize your order details.</p>
+		</div>
+	</div>
+	<div class="ui three stackable cards">
+
+		<div ng-show="deal.designer" class="ui card fluid" >
+			<div class="image">
+				<img src="assets/no-image.png">
+			</div>
+			<div class="ui bottom attached button positive">
+			      <i class="add icon"></i>
+			      New Proof
+			    </div>
+		</div>
+
+		<div class="ui card fluid raised" >
+			<div class="image">
+				<img src="images/dummy-proof-1.png">
+			</div>
+			<div class="content">
+				<p class="header">Proof 4 <span class="right floated"><i class="talk icon"></i></span></p>
+				<p class="meta">Created 2 days ago</p>
+				<p class="meta">Awaiting your response</p>
+			</div>
+		</div>
+
+		<div class="ui card fluid">
+			<div class="image">
+				<img src="images/dummy-proof-2.png">
+			</div>
+			<div class="content">
+				<p class="header">Proof 3</p>
+				<p class="meta">Created 3 days ago</p>
+			</div>
+		</div>
+
+		<div class="ui card fluid">
+			<div class="image">
+				<img src="images/dummy-proof-3.png">
+			</div>
+			<div class="content">
+				<p class="header">Proof 2</p>
+				<p class="meta">Created 5 days ago</p>
+			</div>
+		</div>
+		
+		<div class="ui card fluid">
+			<div class="image">
+				<img src="images/dummy-proof-4.png">
+			</div>
+			<div class="content">
+				<p class="header">Proof 1</p>
+				<p class="meta">Created 8 days ago</p>
+			</div>
+		</div>
+	</div>
+</section>

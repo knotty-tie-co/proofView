@@ -1,0 +1,20 @@
+<section ng-controller="MainController as main">
+	<div ng-show="main.designer">
+		<div class="ui stackable grid">
+			<div class="six wide centered column">
+				<div class="ui segment">
+					<h2>Find a deal</h2>
+					<div class="ui divider"></div>
+					<div class="ui action input huge fluid ">
+						<input type="text" placeholder="Deal ID">
+						<button class="ui button">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-show="!main.designer">
+		<h2>This page is meant for Knotty Tie designers only.</h2>
+	</div>
+</section>
+

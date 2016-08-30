@@ -1,10 +1,10 @@
-angular.module('DealCtrl', []).controller('DealController', function($scope, $http, $routeParams) {
-
-	console.log($routeParams.designer);
+angular.module('ProofCtrl', []).controller('ProofController', function($scope, $http) {
 
 	var self = this;
 	  self.all = [];
-	  self.designer = $routeParams.designer || false;
+	  self.addSong = addSong;
+	  self.newSong = {};
+	  self.getSongs = getSongs;
 
 	getDeals();
 	 function getDeals(){
@@ -15,16 +15,6 @@ angular.module('DealCtrl', []).controller('DealController', function($scope, $ht
 	       console.log(response.data);
 	   });
 	 }
-
-	 // getDeal();
-	 //  function getDeal(){
-	 //    $http
-	 //      .get('/api/deals')
-	 //      .then(function(response){
-	 //        self.all = response.data;
-	 //        console.log(response.data);
-	 //    });
-	 //  }
 
 	function addDeal(){
 	    $http

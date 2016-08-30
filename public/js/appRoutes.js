@@ -10,10 +10,22 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'MainController'
 		})
 
-		.when('/new-song', {
-			templateUrl: 'views/new-song.html',
-			controller: 'SongController'
+		.when('/deal/:id', {
+			templateUrl: 'views/deal.html',
+			controller: 'DealController'
+		})
+
+		.when('/proof/:id', {
+			templateUrl: 'views/proof.html',
+			controller: 'ProofController'
+		})
+
+		.when('/find-deal', {
+			templateUrl: 'views/find-deal.html',
+			controller: 'MainController'
 		});
+
+		
 
 	$locationProvider.html5Mode(true);
 
