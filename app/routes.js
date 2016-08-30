@@ -62,7 +62,7 @@ module.exports = function(app) {
 
 		            // create a songs, information comes from AJAX request from Angular
 		            Proof.create({
-		                images: req.body.images,
+		                image: req.body.image,
 		                deal: req.body.deal
 		            }, function(err, todo) {
 		                if (err)

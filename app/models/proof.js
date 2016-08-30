@@ -7,5 +7,5 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('Proof', {
     created: {type: Date, default: Date.now()},
     deal: {type: Schema.Types.ObjectId, ref: 'Deal'},
-    images: {type: Array, default: []}
+    image: {type: String, default: ''}
 });
