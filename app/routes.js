@@ -1,5 +1,5 @@
 var Deal = require('./models/Deal.js');
-var Proof = require('./models/proof.js');
+var Proof = require('./models/Proof.js');
 
 module.exports = function(app) {
 
