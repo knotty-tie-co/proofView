@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 	Schema = mongoose.Schema;
-	deal = require('./deal');
+	deal = require('./Deal');
 
 // define our nerd model
 // module.exports allows us to pass this to other files when it is called
