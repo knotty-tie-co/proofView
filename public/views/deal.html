@@ -15,10 +15,10 @@
 			<div class="image">
 				<img src="assets/no-image.png">
 			</div>
-			<div class="ui bottom attached button positive">
+			<div id="addProof" class="ui bottom attached button positive">
 			      <i class="add icon"></i>
 			      New Proof
-			    </div>
+			</div>
 		</div>
 
 		<div class="ui card fluid raised" >
@@ -62,4 +62,28 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="modaldiv" class="ui modal">
+	  <i class="close icon"></i>
+	  <div class="header">
+	    New Proof
+	  </div>
+	  <div class="content">
+	    <div class="description">
+	      <div class="ui header">We've auto-chosen a profile image for you.</div>
+	      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+	      <p>Is it okay to use this photo?</p>
+	    </div>
+	  </div>
+	  <div class="actions">
+	    <div class="ui black button">
+	      Nope
+	    </div>
+	    <div class="ui positive right labeled icon button">
+	      Yep, that's me
+	      <i class="checkmark icon"></i>
+	    </div>
+	  </div>
+	</div>
+
 </section>

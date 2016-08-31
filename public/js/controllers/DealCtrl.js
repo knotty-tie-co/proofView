@@ -37,3 +37,4 @@ angular.module('DealCtrl', []).controller('DealController', function($scope, $ht
 	  }
 
 });
+
