@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div ng-repeat="proof in deal.proofs" class="ui card fluid raised" >
+		<a ng-repeat="proof in deal.proofs" class="ui card fluid raised" ng-href="/proof/{{proof._id}}" >
 			<div class="image">
 				<img src={{proof.image}}>
 			</div>
@@ -31,7 +31,7 @@
 				<!-- <p class="meta">Created 2 days ago</p> -->
 				<p ng-show="!proof.response && $index == 0" class="meta">Awaiting your response</p>
 			</div>
-		</div>
+		</a>
 	</div>
 
 	<div id="modaldiv" class="ui modal">
