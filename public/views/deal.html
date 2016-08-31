@@ -22,7 +22,18 @@
 			</div>
 		</div>
 
-		<div class="ui card fluid raised" >
+		<div ng-repeat="proof in deal.proofs" class="ui card fluid raised" >
+			<div class="image">
+				<img src={{proof.image}}>
+			</div>
+			<div class="content">
+				<p class="header">Proof 4 <span class="right floated"><i class="talk icon"></i></span></p>
+				<!-- <p class="meta">Created 2 days ago</p> -->
+				<p class="meta">Awaiting your response</p>
+			</div>
+		</div>
+
+		<!-- <div class="ui card fluid raised" >
 			<div class="image">
 				<img src="images/dummy-proof-1.png">
 			</div>
@@ -62,7 +73,7 @@
 				<p class="meta">Created 8 days ago</p>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="modaldiv" class="ui modal">
 	  <i class="close icon"></i>

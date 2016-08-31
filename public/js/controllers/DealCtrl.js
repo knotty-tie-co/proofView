@@ -6,7 +6,7 @@ angular.module('DealCtrl', []).controller('DealController', function($scope, $ht
 	  self.designer = $routeParams.designer || false;
 	  self.dealID = $routeParams.id;
 	  self.deal = {};
-	  self.proofs = {};
+	  self.proofs = [];
 
 	  
 
@@ -30,7 +30,7 @@ angular.module('DealCtrl', []).controller('DealController', function($scope, $ht
 	    $http
 	    	.get('/api/proof-by-deal/' + self.dealID)
 	    	.then(function(response){
-	    		self.proofs = response.data;
+	    		self.proofs = response.data.reverse();
 	    		console.log(response.data);
 	    });
 
