@@ -1,6 +1,6 @@
 <section ng-controller="DealController as deal">
 	<h2 ng-show="!deal.designer">Hello, {{deal.deal.client.fName}}! Here are your proofs for review.</h2>
-	<div ng-show="!deal.designer" class="ui compact icon message">
+	<div ng-show="!deal.designer && deal.proofs[0].response == undefined" class="ui compact icon message">
 		<i class="talk icon"></i>
 		<div class="content">
 			<div class="header">
@@ -27,53 +27,12 @@
 			</div>
 			<div class="content">
 
-				<p class="header">Proof {{deal.proofs.length - $index}} <span class="right floated"><i class="talk icon"></i></span></p>
+				<p class="header">Proof {{deal.proofs.length - $index}} <span ng-show="!proof.response && $index == 0" class="right floated"><i class="talk icon"></i></span></p>
 				<!-- <p class="meta">Created 2 days ago</p> -->
-				<p class="meta">Awaiting your response</p>
+				<p ng-show="!proof.response && $index == 0" class="meta">Awaiting your response</p>
 			</div>
 		</div>
-
-		<!-- <div class="ui card fluid raised" >
-			<div class="image">
-				<img src="images/dummy-proof-1.png">
-			</div>
-			<div class="content">
-				<p class="header">Proof 4 <span class="right floated"><i class="talk icon"></i></span></p>
-				<p class="meta">Created 2 days ago</p>
-				<p class="meta">Awaiting your response</p>
-			</div>
-		</div>
-
-		<div class="ui card fluid">
-			<div class="image">
-				<img src="images/dummy-proof-2.png">
-			</div>
-			<div class="content">
-				<p class="header">Proof 3</p>
-				<p class="meta">Created 3 days ago</p>
-			</div>
-		</div>
-
-		<div class="ui card fluid">
-			<div class="image">
-				<img src="images/dummy-proof-3.png">
-			</div>
-			<div class="content">
-				<p class="header">Proof 2</p>
-				<p class="meta">Created 5 days ago</p>
-			</div>
-		</div>
-		
-		<div class="ui card fluid">
-			<div class="image">
-				<img src="images/dummy-proof-4.png">
-			</div>
-			<div class="content">
-				<p class="header">Proof 1</p>
-				<p class="meta">Created 8 days ago</p>
-			</div>
-		</div>
-	</div> -->
+	</div>
 
 	<div id="modaldiv" class="ui modal">
 	  <i class="close icon"></i>
