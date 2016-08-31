@@ -26,3 +26,5 @@ module.exports = mongoose.model('Deal', {
     dealID: {type: Number, default: ''},
     pipeline: {type: String, default: ''}
 });
+
+var i = 1;

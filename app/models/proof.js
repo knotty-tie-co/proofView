@@ -9,3 +9,5 @@ module.exports = mongoose.model('Proof', {
     deal: {type: Schema.Types.ObjectId, ref: 'Deal'},
     image: {type: String, default: ''}
 });
+
+var i = 1;
