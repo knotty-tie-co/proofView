@@ -19,6 +19,19 @@ module.exports = function(app) {
 		        });
 		    });
 
+		    // get one deal by id
+		    app.get('/api/deal/:id', function(req, res) {
+		        // use mongoose to get all songs in the database
+		        Deal.findById(req.params.id, function(err, deal) {
+		            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		            if (err)
+		                res.send(err);
+		            res.json(deal);
+		            console.log(deal) // return all songs in JSON format
+		        });
+		        console.log(deal)
+		    });
+
 		    // create song and send back all songs after creation
 		    app.post('/api/deals', function(req, res) {
 
@@ -46,7 +59,7 @@ module.exports = function(app) {
 		    });
 
 		    //PROOFS API ------------------------------------------------------------
-		        // get all deals
+		        // get all proofs
 		        app.get('/api/proofs', function(req, res) {
 		            // use mongoose to get all songs in the database
 		            Proof.find(function(err, proofs) {
@@ -54,6 +67,18 @@ module.exports = function(app) {
 		                if (err)
 		                    res.send(err);
 		                res.json(proofs); // return all songs in JSON format
+		            });
+		        });
+
+		        // get proofs by parent deal id
+		        app.get('/api/proof-by-deal/:dealID', function(req, res) {
+		            // use mongoose to get all songs in the database
+		            Proof.find({'deal' : req.params.dealID}, function(err, proofs) {
+		                // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		                if (err)
+		                    res.send(err);
+		                res.json(proofs);
+		                 // return all songs in JSON format
 		            });
 		        });
 

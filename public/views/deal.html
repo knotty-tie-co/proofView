@@ -1,5 +1,6 @@
 <section ng-controller="DealController as deal">
-	<h2 ng-show="!deal.designer">Hello, Mark! Here are your proofs for review.</h2>
+	{{deal.proofs}}
+	<h2 ng-show="!deal.designer">Hello, {{deal.deal.client.fName}}! Here are your proofs for review.</h2>
 	<div ng-show="!deal.designer" class="ui compact icon message">
 		<i class="talk icon"></i>
 		<div class="content">
