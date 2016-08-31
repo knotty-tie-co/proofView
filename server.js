@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 require('./app/routes')(app); // pass our application into our routes
 
 // models
-require('./app/models/Deal.js');
+require('./app/models/Deal');
 
 // start app ===============================================
 app.listen(port);	
