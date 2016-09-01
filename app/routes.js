@@ -70,6 +70,18 @@ module.exports = function(app) {
 		            });
 		        });
 
+		        // get one proof by id
+		        app.get('/api/proof/:id', function(req, res) {
+		            // use mongoose to get all songs in the database
+		            Proof.findById(req.params.id, function(err, proof) {
+		                // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		                if (err)
+		                    res.send(err);
+		                res.json(proof);
+		                console.log(proof);
+		            });
+		        });
+
 		        // get proofs by parent deal id
 		        app.get('/api/proof-by-deal/:dealID', function(req, res) {
 		            // use mongoose to get all songs in the database

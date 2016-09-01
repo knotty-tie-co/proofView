@@ -1,40 +1,34 @@
-<script>$('.easyzoom').easyZoom();</script>
-<div class="ui mobile stackable grid">
-	<div class="ui row">
-	<div class="sixteen wide column">
-		<div class="ui segment raised">
-			<div class="easyzoom easyzoom--overlay">
-			<a href="images/dummy-proof-4.png">
-			<img class="ui fluid image" src="images/dummy-proof-4.png">
-			</a>
-			</div>
-			
+<section ng-controller="ProofController as proof"><div class="ui mobile stackable grid">
 
+	<div class="ui row">
+		<div class="sixteen wide column">
+			<div class="ui segment raised">
+				<img class="ui fluid image" src={{proof.proof.image}}>				
+			</div>
 		</div>
-	</div>
 	</div>
 	<div class="ui row reversed">
-	<div class="six wide column">
-		<div class="ui secondary segment">
-			<h2>Proof Info</h2>
-			<div class="ui divider"></div>
-			<h3>Sent 2 Days Ago</h3>
-			<div class="ui divider"></div>
-			<h3>Your Desigener:</h3>
-			<p>Mark Johnson</p>
-
+		<div class="six wide column">
+			<div class="ui secondary segment">
+				<h2>Proof Info</h2>
+				<div class="ui divider"></div>
+				<h3>Your Desigener:</h3>
+				<p>Mark Johnson</p>
+				<div class="ui divider"></div>
+				<a ng-href="/deal/{{proof.proof.deal}}">See the other proofs in this deal.</a>
+			</div>
 		</div>
-	</div>
-	<div class="ten wide column">
-		<div class="ui piled segment">
-			<h2>Your Feedback</h2>
-			<div class="ui divider"></div>
-			<h3>Would you like us to revise your proof?</h3>
-			<div class="ui huge fluid buttons">
-			  <button class="ui positive button">Yes</button>
-			  <div class="or"></div>
-			  <button class="ui button">No</button>
+		<div class="ten wide column">
+			<div class="ui piled segment">
+				<h2>Your Feedback</h2>
+				<div class="ui divider"></div>
+				<h3>Would you like us to revise your proof?</h3>
+				<div class="ui huge fluid buttons">
+					<button class="ui positive button">Yes</button>
+					<div class="or"></div>
+					<button class="ui button">No</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>

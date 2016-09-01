@@ -1,10 +1,20 @@
-angular.module('ProofCtrl', []).controller('ProofController', function($scope, $http) {
+angular.module('ProofCtrl', []).controller('ProofController', function($scope, $http, $routeParams) {
 
-	var self = this;
-	  self.all = [];
-	  self.addSong = addSong;
-	  self.newSong = {};
-	  self.getSongs = getSongs;
+var self = this;
+	  self.designer = $routeParams.designer || false;
+	  self.proofID = $routeParams.id;
+	  self.proof = {};
+
+	  getProof();
+	  function getProof(){
+	  	$http
+	       .get('/api/proof/' + self.proofID)
+	       .then(function(response){
+	         self.proof = response.data;
+	         console.log(response.data);
+	     });
+	    
+	    }
 
 	getDeals();
 	 function getDeals(){
