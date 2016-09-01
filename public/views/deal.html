@@ -41,11 +41,12 @@
 	  </div>
 	  <div class="content">
 	    <div class="description">
+
 	      <div class="ui header">Upload a new proof for {{deal.deal.client.fName}} {{deal.deal.client.lName}}.</div>
 	      <form class="ui form">
 	        <div class="field">
 	          <label>Paste the link to the proof image:</label>
-	          <input type="text" name="image" placeholder="blablagoogledrive.realurl.ly/23452-1">
+	          <input type="text" name="image" ng-model="addProof.image" placeholder="blablagoogledrive.realurl.ly/23452-1">
 	        </div>
 	        <div class="field">
 	          <div class="ui checkbox">
@@ -53,17 +54,15 @@
 	            <label>Send this proof to the client now?</label>
 	          </div>
 	        </div>
-	      </form>
+	      
 	  </div>
 	  <div class="ui divider"></div>
 	  <div class="actions">
-	    <div class="ui black button">
-	      Hold up
-	    </div>
-	    <div class="ui positive right labeled icon button">
+	    <div class="ui positive right labeled icon button" ng-click="saveData()">
 	      Create proof.
 	      <i class="checkmark icon"></i>
 	    </div>
+	    </form>
 	  </div>
 	</div>
 

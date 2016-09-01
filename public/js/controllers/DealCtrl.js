@@ -7,18 +7,24 @@ angular.module('DealCtrl', []).controller('DealController', function($scope, $ht
 	  self.dealID = $routeParams.id;
 	  self.deal = {};
 	  self.proofs = [];
+	  
+	  $scope.addProof = {
+	  	"image" : "",
+	  	"deal" : self.dealID
+	  };
 
 	  
 
-	// getDeals();
-	//  function getDeals(){
-	//    $http
-	//      .get('/api/deals')
-	//      .then(function(response){
-	//        self.all = response.data;
-	//        console.log(response.data);
-	//    });
-	//  }
+
+	$scope.saveData = function() {
+		console.log($scope.addProof);
+			$http
+	      .post('/api/proofs', $scope.addProof)
+	      .then(function(response){
+	      	console.log(response);
+	        self.proofs.push(response.data.reverse());
+	    });
+	   };
 
 	  getDeal();
 	  function getDeal(){
