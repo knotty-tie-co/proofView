@@ -7,6 +7,7 @@ This app solves problems from our disjointed proofing process by streamlinging v
 Beacase this app is meant to be used as a part of our existing CRM/email delivery, you may find it hard to navigate on it's own. Here are a couple views of note:
 
 [Customer deal view](https://proofview.herokuapp.com/deal/57c871309e8ca41100261167)
+
 [Designer deal view](https://proofview.herokuapp.com/deal/57c871309e8ca41100261167?designer=true)
 
 ##Technoligies used
@@ -15,4 +16,5 @@ Beacase this app is meant to be used as a part of our existing CRM/email deliver
 
 ##Other stuff
 [User stories](https://trello.com/b/DHeTohY6/knotty-dashboard)
+
 [Wireframes](https://github.com/knotty-tie-co/proofView/blob/master/wireframes.pdf)
