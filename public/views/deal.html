@@ -34,24 +34,34 @@
 		</a>
 	</div>
 
-	<div id="modaldiv" class="ui modal">
+	<div id="modaldiv" ng-show="deal.designer" class="ui modal">
 	  <i class="close icon"></i>
 	  <div class="header">
 	    New Proof
 	  </div>
 	  <div class="content">
 	    <div class="description">
-	      <div class="ui header">We've auto-chosen a profile image for you.</div>
-	      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-	      <p>Is it okay to use this photo?</p>
-	    </div>
+	      <div class="ui header">Upload a new proof for {{deal.deal.client.fName}} {{deal.deal.client.lName}}.</div>
+	      <form class="ui form">
+	        <div class="field">
+	          <label>Paste the link to the proof image:</label>
+	          <input type="text" name="image" placeholder="blablagoogledrive.realurl.ly/23452-1">
+	        </div>
+	        <div class="field">
+	          <div class="ui checkbox">
+	            <input type="checkbox" tabindex="0" class="hidden">
+	            <label>Send this proof to the client now?</label>
+	          </div>
+	        </div>
+	      </form>
 	  </div>
+	  <div class="ui divider"></div>
 	  <div class="actions">
 	    <div class="ui black button">
-	      Nope
+	      Hold up
 	    </div>
 	    <div class="ui positive right labeled icon button">
-	      Yep, that's me
+	      Create proof.
 	      <i class="checkmark icon"></i>
 	    </div>
 	  </div>
