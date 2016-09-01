@@ -22,13 +22,30 @@
 			<div class="ui piled segment">
 				<h2>Your Feedback</h2>
 				<div class="ui divider"></div>
-				<h3>Would you like us to revise your proof?</h3>
-				<div class="ui huge fluid buttons">
-					<button class="ui positive button">Yes</button>
-					<div class="or"></div>
-					<button class="ui button">No</button>
+				<div ng-show="!proof.response.revise  && !proof.proof.response.changes">
+					<h3>Would you like us to revise your proof?</h3>
+					<div class="ui huge fluid buttons">
+						<button class="ui positive button" ng-click="requestRevision()">Yes</button>
+						<div class="or"></div>
+						<button class="ui button">No</button>
+					</div>					
+				</div>
+				<div ng-show="(proof.response.revise == 'yes') && !proof.response.changes">
+					<h3>What should we change?</h3>
+					<div class="ui form">
+						<div class="field">
+							<textarea rows="4" ng-model="response.changes"></textarea>
+							<div class="ui divider"></div>
+							<div class="ui positive right labeled icon button" ng-click="submitResponse()">
+								Submit <i class="checkmark icon"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-show="proof.response.changes">
+					<h3>Thanks for your response! Your designer has been notified.</h3>
+					<p>We'll send back a new proof as soon as it's ready. Let us know if we can help with anything in the meantime!</p>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>

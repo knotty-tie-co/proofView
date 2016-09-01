@@ -4,6 +4,10 @@ var self = this;
 	  self.designer = $routeParams.designer || false;
 	  self.proofID = $routeParams.id;
 	  self.proof = {};
+	  self.response = {
+	  };
+
+	  console.log("revise " + self.response.revise);
 
 	  getProof();
 	  function getProof(){
@@ -16,24 +20,21 @@ var self = this;
 	    
 	    }
 
-	getDeals();
-	 function getDeals(){
-	   $http
-	     .get('/api/deals')
-	     .then(function(response){
-	       self.all = response.data;
-	       console.log(response.data);
-	   });
-	 }
 
-	function addDeal(){
-	    $http
-	      .post('/api/deals', self.newDeal)
-	      .then(function(response){
-	      	console.log(response);
-	        self.all.push(response.data.deal);
-	    });
-	    self.newDeal = {};
-	  }
+	  $scope.requestRevision = function(){
+	  	self.response.revise = 'yes';
+	  	console.log(self.response.revise);
+	  };
+
+	  $scope.submitResponse = function() {
+	  		self.response.changes = $scope.response.changes;
+	  		self.proof.response = self.response;
+	  		console.log(self.proof);
+	  		$http
+	        .put('/api/proofs/' + self.proofID, self.proof)
+	        .then(function(response){
+	        	console.log(response);
+	      });
+	     };
 
 });
