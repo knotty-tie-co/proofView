@@ -4,12 +4,6 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 	$routeProvider
 
-		// home page
-		.when('/', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
-		})
-
 		.when('/deal/:id', {
 			templateUrl: 'views/deal.html',
 			controller: 'DealController'
